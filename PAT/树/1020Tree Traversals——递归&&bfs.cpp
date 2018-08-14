@@ -3,14 +3,21 @@
 using namespace std;
 //后序、中序
 int postorder[40],inorder[40];
- 
+
+typedef int datatype;  //结点数据类型 
+typedef struct node{   //结点定义 
+	datatype data;
+	struct node *left,*right;
+}node; 
+
+/*另一种方法的定义  
 class node
 {
 public:
     int data;
     node *left,*right;
-};
- 
+};*/ 
+
 queue<node *> st;
  
 node *CreateTree(int n,int *post,int *in)
