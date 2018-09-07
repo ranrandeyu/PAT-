@@ -8,23 +8,23 @@ struct tree_key{
 }key[20];
 
 struct node{
-	node* lchild;
-	node* rchild;
+	node *lchild;
+	node *rchild;
 	int data;
 };
 //添加一个数字到树中 
-node* create(int k)
+node *create(int k)
 {
 	if(k==-1)
 	return NULL;
-	node* root=new node;
+	node *root=new node;
 	root->data=k;
 	root->lchild=create(key[k].lkey);
 	root->rchild=create(key[k].rkey);
 	return root;
 }
 //中序遍历左根右转制后为右根左
-void inorder(node* root,int &n)
+void inorder(node *root,int &n)
 {
 	if(root==NULL)
 	return;
@@ -36,12 +36,12 @@ void inorder(node* root,int &n)
 	inorder(root->lchild,n);
  } 
  //层序遍历
-void bfs(node* root,int n)
+void bfs(node *root,int n)
 {
-	queue<node*>que;
+	queue<node *>que;
 	que.push(root);
 	while(!que.empty()){
-	node* p=que.front();
+	node *p=que.front();
 	n--;
 	que.pop();
 	if(n==0)printf("%d\n",p->data);
