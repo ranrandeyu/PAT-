@@ -1,7 +1,6 @@
 #include<iostream>
 #include<map>
 using namespace std;
-#define max 800
 int main()
 {
 	int m,temp=0,n;
